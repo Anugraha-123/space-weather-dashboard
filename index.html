@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Space Weather Dashboard</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         MAIN DASHBOARD
+    ====================================== -->
+
+    <div class="dashboard">
+
+
+        <!-- =================================
+             HEADER
+        ================================== -->
+
+        <header>
+
+            <div>
+
+                <h1>🌌 Space Weather Dashboard</h1>
+
+                <p>
+                    Real-time monitoring of solar and
+                    geomagnetic activity
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <span id="monitoring-status">
+                    Monitoring
+                </span>
+
+                <button onclick="loadSpaceWeatherData()">
+                    ↻ Refresh
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================
+             DATA SOURCE
+        ================================== -->
+
+        <div style="
+            padding: 0 25px;
+            color: #60a5fa;
+            font-size: 13px;
+        ">
+
+            NOAA Space Weather Prediction Center
+
+            <span style="float:right;"
+                  id="last-updated">
+                Loading...
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================
+             ALERT
+        ================================== -->
+
+        <section id="alert-box">
+
+            <div id="alert-title">
+                ✓ Space weather conditions are normal
+            </div>
+
+            <div id="alert-message">
+                Checking current space-weather conditions...
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             ACTIVITY CHART
+        ================================== -->
+
+        <section class="card">
+
+            <h2>
+                📈 Geomagnetic Activity
+            </h2>
+
+            <p>
+                Recent NOAA planetary Kp index
+            </p>
+
+            <div id="activity-chart"></div>
+
+        </section>
+
+
+
+        <!-- =================================
+             LIVE DATA CARDS
+        ================================== -->
+
+        <div class="cards">
+
+
+            <!-- SOLAR ACTIVITY -->
+
+            <div class="card">
+
+                <h3>☀️ Solar Activity</h3>
+
+                <div class="value"
+                     id="solar-activity">
+                    Loading...
+                </div>
+
+                <p>
+                    Current solar activity level
+                </p>
+
+            </div>
+
+
+
+            <!-- SOLAR FLARES -->
+
+            <div class="card">
+
+                <h3>🔥 Solar Flares</h3>
+
+                <div class="value"
+                     id="flare-count">
+                    Loading...
+                </div>
+
+                <p>
+                    Recent X-ray flare events
+                </p>
+
+            </div>
+
+
+
+            <!-- KP INDEX -->
+
+            <div class="card">
+
+                <h3>🌍 Geomagnetic Activity</h3>
+
+                <div class="value"
+                     id="kp-value">
+                    Loading...
+                </div>
+
+                <p>
+                    Planetary Kp index
+                </p>
+
+            </div>
+
+
+
+            <!-- SOLAR WIND -->
+
+            <div class="card">
+
+                <h3>💨 Solar Wind</h3>
+
+                <div class="value">
+
+                    <span id="solar-wind">
+                        Loading...
+                    </span>
+
+                    <span style="font-size:16px;">
+                        km/s
+                    </span>
+
+                </div>
+
+                <p>
+                    Solar wind proton speed
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             INFORMATION SECTION
+        ================================== -->
+
+        <section class="card"
+                 style="margin:25px;">
+
+            <h2>
+                🛰️ About Space Weather
+            </h2>
+
+            <p style="margin-top:12px;">
+
+                Space weather describes changes in the
+                space environment caused mainly by solar
+                activity. Solar flares, solar wind and
+                geomagnetic disturbances can affect
+                satellites, radio communication,
+                navigation systems and other
+                space-based technologies.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             DATA SOURCE
+        ================================== -->
+
+        <section class="card"
+                 style="margin:25px;">
+
+            <h3>
+                📡 Data Source
+            </h3>
+
+            <p style="margin-top:10px;">
+
+                Live data is obtained from the
+                <strong>
+                    NOAA Space Weather Prediction Center
+                </strong>.
+
+            </p>
+
+            <p style="margin-top:8px;">
+
+                Monitoring includes:
+
+            </p>
+
+            <p style="margin-top:6px;">
+
+                • Planetary Kp Index<br>
+                • Solar Wind Speed<br>
+                • Solar X-ray Flares<br>
+                • Geomagnetic Activity
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <footer style="
+            text-align:center;
+            padding:25px;
+            color:#64748b;
+            font-size:13px;
+        ">
+
+            Space Weather Dashboard
+            <br>
+
+            Real-time NOAA monitoring system
+
+        </footer>
+
+
+    </div>
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
